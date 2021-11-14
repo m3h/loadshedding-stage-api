@@ -1,6 +1,7 @@
+#!/usr/bin/env python3
+
 import json
 import datetime
-# import requests
 
 import urllib3
 
@@ -69,3 +70,12 @@ def lambda_handler(event, context):
             "status": apis,
         }),
     }
+
+
+if __name__ == "__main__":
+    # event and context are currently unused
+    lambda_ret = lambda_handler(event=None, context=None)
+    # normalize JSON
+    lambda_ret['body'] = json.loads(lambda_ret['body'])
+
+    print(json.dumps(lambda_ret))

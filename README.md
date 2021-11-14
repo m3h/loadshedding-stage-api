@@ -1,3 +1,13 @@
+## Running locally (e.g. for testing)
+
+```
+pip install -r ./requirements.txt
+python3 ./lambda_function.py
+```
+
+(Note that this simply runs the lambda event handler once - therefore the
+caching isn't really tested)
+
 ## Current testing endpoint
 
 Currently available to test at https://8yt84sq5d4.execute-api.af-south-1.amazonaws.com/default/loadshedding

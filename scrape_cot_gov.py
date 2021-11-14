@@ -34,13 +34,10 @@ def scrape_cot(url=COT_URL):
 
 def scrape_text(http_text):
     soup = BeautifulSoup(http_text, "html.parser")
-    # print(soup.prettify())
 
     soup = soup.find_all("p", class_="lrg")[0]
     lines = [x.strip() for x in soup.get_text().splitlines()]
     lines = [x for x in lines if x != '']
-
-    [print(x) for x in lines]
 
     def error_extract(pattern, string):
         match = re.fullmatch(pattern, string)
